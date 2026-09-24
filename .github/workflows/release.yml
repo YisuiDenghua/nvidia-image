@@ -16,8 +16,8 @@ jobs:
 
     steps:
     - name: Verify Base Image Integrity
-      run:
-        gh attestation verify oci://ghcr.io/vanilla-os/gnome:latest --owner Vanilla-OS
+      run: |
+        gh attestation verify oci://ghcr.io/vanilla-kde/kde:latest --owner Vanilla-KDE
       env:
         GH_TOKEN: ${{ github.token }}
 
@@ -54,3 +54,4 @@ jobs:
         uses: actions/attest-build-provenance@v4
         with:
           subject-path: 'Containerfile'
+
