@@ -1,10 +1,10 @@
-name: Vanilla GNOME NVIDIA
-id: gnome-nvidia
+name: Vanilla Kipferl NVIDIA
+id: kipferl-nvidia
 vibversion: 1.1.0
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/gnome:latest
+  base: ghcr.io/vanilla-kde/kde:dev
   addincludes: true
   singlelayer: false
   labels:
@@ -79,7 +79,6 @@ stages:
     type: shell
     commands:
     - mkdir -p /etc/udev/rules.d
-    - ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
 
   - name: cleanup
     type: shell
